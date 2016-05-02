@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HVK-H3-m3Q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="UUV-zc-Hvs">
+            <objects>
+                <navigationController id="HVK-H3-m3Q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mXl-C5-4Fl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PMq-M4-6Ff" kind="relationship" relationship="rootViewController" id="32I-Cc-CsY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwE-yb-6aZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2820" y="-127"/>
+        </scene>
+        <!--聊天室-->
+        <scene sceneID="0aK-cx-i9o">
+            <objects>
+                <viewController id="PMq-M4-6Ff" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3a-R8-3xo"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Ne-Hk-2jy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSc-0S-JKa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHr-0F-EKX" userLabel="输入框的容器">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9XN-3E-NtY">
+                                        <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="PMq-M4-6Ff" id="719-PT-Ml0"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.79215686269999996" green="0.81176470590000005" blue="0.85882352939999995" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9XN-3E-NtY" firstAttribute="leading" secondItem="cHr-0F-EKX" secondAttribute="leading" constant="45" id="BK1-MN-W4D"/>
+                                    <constraint firstItem="9XN-3E-NtY" firstAttribute="top" secondItem="cHr-0F-EKX" secondAttribute="top" constant="8" id="BQR-4G-EKX"/>
+                                    <constraint firstAttribute="trailing" secondItem="9XN-3E-NtY" secondAttribute="trailing" constant="45" id="JzF-Qt-CiB"/>
+                                    <constraint firstAttribute="height" constant="44" id="Zzb-Ds-WrA"/>
+                                    <constraint firstAttribute="bottom" secondItem="9XN-3E-NtY" secondAttribute="bottom" constant="6" id="v1x-ef-nee"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="9XN-3E-NtY"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="Zzb-Ds-WrA"/>
+                                        <exclude reference="BK1-MN-W4D"/>
+                                        <exclude reference="BQR-4G-EKX"/>
+                                        <exclude reference="JzF-Qt-CiB"/>
+                                        <exclude reference="v1x-ef-nee"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="9XN-3E-NtY"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="Zzb-Ds-WrA"/>
+                                        <include reference="BK1-MN-W4D"/>
+                                        <include reference="BQR-4G-EKX"/>
+                                        <include reference="JzF-Qt-CiB"/>
+                                        <include reference="v1x-ef-nee"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Bl-Wy-1tT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="2Fy-EY-kcW">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Fy-EY-kcW" id="oUd-Bo-H4R">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PMq-M4-6Ff" id="bfa-OH-Dqb"/>
+                                    <outlet property="delegate" destination="PMq-M4-6Ff" id="7Ya-cT-cMB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cHr-0F-EKX" firstAttribute="top" secondItem="8Bl-Wy-1tT" secondAttribute="bottom" id="2zj-Ry-T5F"/>
+                            <constraint firstItem="3Ne-Hk-2jy" firstAttribute="top" secondItem="cHr-0F-EKX" secondAttribute="bottom" id="I5g-pN-XrM"/>
+                            <constraint firstAttribute="trailing" secondItem="8Bl-Wy-1tT" secondAttribute="trailing" id="Iep-TO-WgV"/>
+                            <constraint firstItem="cHr-0F-EKX" firstAttribute="leading" secondItem="wSc-0S-JKa" secondAttribute="leading" id="KL5-kP-crF"/>
+                            <constraint firstItem="8Bl-Wy-1tT" firstAttribute="top" secondItem="c3a-R8-3xo" secondAttribute="bottom" id="PLK-1w-vbv"/>
+                            <constraint firstAttribute="trailing" secondItem="cHr-0F-EKX" secondAttribute="trailing" id="WsJ-Ty-xvm"/>
+                            <constraint firstItem="8Bl-Wy-1tT" firstAttribute="leading" secondItem="wSc-0S-JKa" secondAttribute="leading" id="rlP-eJ-50g"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="cHr-0F-EKX"/>
+                                <exclude reference="8Bl-Wy-1tT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Iep-TO-WgV"/>
+                                <exclude reference="PLK-1w-vbv"/>
+                                <exclude reference="rlP-eJ-50g"/>
+                                <exclude reference="2zj-Ry-T5F"/>
+                                <exclude reference="KL5-kP-crF"/>
+                                <exclude reference="WsJ-Ty-xvm"/>
+                                <exclude reference="I5g-pN-XrM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="cHr-0F-EKX"/>
+                                <include reference="8Bl-Wy-1tT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Iep-TO-WgV"/>
+                                <include reference="PLK-1w-vbv"/>
+                                <include reference="rlP-eJ-50g"/>
+                                <include reference="2zj-Ry-T5F"/>
+                                <include reference="KL5-kP-crF"/>
+                                <include reference="WsJ-Ty-xvm"/>
+                                <include reference="I5g-pN-XrM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="聊天室" id="kRk-wZ-Q3v">
+                        <barButtonItem key="leftBarButtonItem" title="连接服务器" id="4LH-ng-jGp">
+                            <connections>
+                                <action selector="connectToHost:" destination="PMq-M4-6Ff" id="nSI-Jo-zo2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="登录" id="RD4-qL-Uxu">
+                            <connections>
+                                <action selector="loginBtnClick:" destination="PMq-M4-6Ff" id="vU2-yq-ZhU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputViewConstraint" destination="I5g-pN-XrM" id="dxe-lG-eoc"/>
+                        <outlet property="tableView" destination="8Bl-Wy-1tT" id="ZRY-Rk-Pfi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2b-lv-GMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888.5" y="-153"/>
+        </scene>
+    </scenes>
+</document>
